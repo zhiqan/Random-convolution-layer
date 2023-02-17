@@ -1,0 +1,10 @@
+3 0.007-Ball
+3 0.007-InnerRace
+3 0.007-OuterRace
+3 0.014-Ball
+3 0.014-InnerRace
+3 0.014-OuterRace
+3 0.021-Ball
+3 0.021-InnerRace
+3 0.021-OuterRace
+3 Normal
