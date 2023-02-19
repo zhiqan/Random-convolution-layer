@@ -7,7 +7,7 @@ Created on Fri Feb 17 16:14:58 2023
 import numpy as np
 import torch
 
-def RCNN(X_n): 
+def RCL(X_n): 
         N, C, W = X_n.size()
         p = np.random.rand()
         K = [1, 3, 5, 7, 11, 15]#Try adding random kernel sizes
