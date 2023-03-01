@@ -773,7 +773,9 @@ def train():
        if p > 0.5:
            k = K[np.random.randint(0, len(K))]
            Conv = torch.nn.Conv1d(1, 1, kernel_size=k, stride=1, padding=k//2, bias=False)
-           torch.nn.init.xavier_normal_(Conv.weight)
+           #torch.nn.init.xavier_normal_(Conv.weight)
+           torch.nn.init.kaiming_normal_(Conv.weight)
+        
            inputs = Conv(inputs.reshape(-1, C, W)).reshape(N, C,  W)
        out = model(inputs)
        loss = crossEntropyloss(out,labels.long())
@@ -784,14 +786,14 @@ def train():
    correct = 0
    for i,data in enumerate(train_loader):
        inputs,labels = data
-       N, C, W = inputs.size()
-       p = np.random.rand()
-       K = [1, 3, 5, 7, 11, 15]
-       if p > 0.5:
-           k = K[np.random.randint(0, len(K))]
-           Conv = torch.nn.Conv1d(1, 1, kernel_size=k, stride=1, padding=k//2, bias=False)
-           torch.nn.init.xavier_normal_(Conv.weight)
-           inputs = Conv(inputs.reshape(-1, C, W)).reshape(N, C,  W)
+       #N, C, W = inputs.size()
+       #p = np.random.rand()
+       #K = [1, 3, 5, 7, 11, 15]
+       #if p > 0.5:
+           #k = K[np.random.randint(0, len(K))]
+           #Conv = torch.nn.Conv1d(1, 1, kernel_size=k, stride=1, padding=k//2, bias=False)
+           #torch.nn.init.xavier_normal_(Conv.weight)
+           #inputs = Conv(inputs.reshape(-1, C, W)).reshape(N, C,  W)
        
        out = model(inputs)
        _,predictions = torch.max(out,1)
@@ -829,7 +831,8 @@ def train():
        if p > 0.5:
            k = K[np.random.randint(0, len(K))]
            Conv = torch.nn.Conv1d(1, 1, kernel_size=k, stride=1, padding=k//2, bias=False)
-           torch.nn.init.xavier_normal_(Conv.weight)
+           #torch.nn.init.xavier_normal_(Conv.weight)
+           torch.nn.init.kaiming_normal_(Conv.weight)
            inputs = Conv(inputs.reshape(-1, C, W)).reshape(N, C,  W)
        out = model(inputs)
        loss = crossEntropyloss(out,labels.long())
