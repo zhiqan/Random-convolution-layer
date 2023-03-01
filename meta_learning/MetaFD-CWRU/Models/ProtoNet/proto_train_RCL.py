@@ -36,7 +36,8 @@ class ProtoNet_learner(object):
         if p > 0.5:
             k = K[np.random.randint(0, len(K))]
             Conv = torch.nn.Conv1d(1, 1, kernel_size=k, stride=1, padding=k//2, bias=False)
-            torch.nn.init.xavier_normal_(Conv.weight)
+            #torch.nn.init.xavier_normal_(Conv.weight)
+            torch.nn.init.kaiming_normal_(Conv.weight)
             X_n = Conv(X_n.reshape(-1, C, W)).reshape(N, C,  W)
         return X_n.detach()
     
