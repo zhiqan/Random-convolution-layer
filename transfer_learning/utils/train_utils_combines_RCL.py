@@ -267,6 +267,7 @@ class train_utils(object):
                             #k = K[np.random.randint(0, len(K))]
                             #Conv = torch.nn.Conv1d(1, 1, kernel_size=k, stride=1, padding=k//2, bias=False)
                             #torch.nn.init.xavier_normal_(Conv.weight)
+                            #torch.nn.init.kaiming_normal_(Conv.weight)
                             #source_inputs= Conv(source_inputs.reshape(-1, C,W).float()).reshape(N, C, W)
                         target_inputs, _ = iter_target.next()
                         inputs = torch.cat((source_inputs, target_inputs), dim=0)
