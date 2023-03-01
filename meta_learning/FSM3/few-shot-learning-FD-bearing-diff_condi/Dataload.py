@@ -52,6 +52,7 @@ class MetaDataset(Dataset):
                #k = K[np.random.randint(0, len(K))]
                 #Conv = torch.nn.Conv1d(1, 1, kernel_size=k, stride=1, padding=k//2, bias=False)
                 #torch.nn.init.xavier_normal_(Conv.weight)
+                #torch.nn.init.kaiming_normal_(Conv.weight)
                 #X_orig = Conv(X_orig.reshape(-1, C, W)).reshape(N, C*W)
                 #X_orig =X_orig.detach().numpy()
             #else:
